@@ -1,0 +1,51 @@
+13thfoxbot
+Author: Ryan Rose AKA 13thfox
+version 0.1
+Written in Python 3.11 with twitchio library
+
+
+DESCRIPTION
+
+Currently only works on 13thfox's channel for development and upon release will only be available on Pomatomaster's channel.
+    (though this may change in the future if I'm having fun with the project and it isn't too expensive to host.)
+
+13thfoxbot is a minimalist twitch chatbot that will shoutout (!so name) other approved streamers in twitch chat
+    automatically upon them entering chat.
+
+13thfoxbot will shoutout channels on their first chat once a day and reset at 7 am EST.
+        (this may be a variable set by command later)
+
+---------------PSEUDOCODE-------------------
+
+13thfoxbot's main loop will monitor message events and if the author of a message is on the whiteList and not the
+    shoutedoutList. If the condition is met it will add the username to the shoutoutList.
+
+13thfoxbot's main loop will message "!so {twitch usernames}" on the shoutoutList and add those username(s) to the
+    shoutedoutList once every 5 seconds.
+        (this is the only part of the code I don't have working) =(
+
+
+13thfoxbot initially will have 4 commands. Only mods of Pom's channel will have the ability to use these commands.
+
+"?add {twitch username}" will add a channel to the whitelist
+"?remove {twitch username}" will remove a channel from the whitelist
+"?reset" will clear the shoutedoutList and will shoutout channels on the whiteList again upon their first new chats.
+    (Primarily used for if there are multiple streams in a day or very long streams and may lead to spam.)
+"?help" will give a brief description about 13thfoxbot and list its commands.
+
+? prefix was chosen as to not fight with nightbot/stream elements
+
+
+
+CSVs
+
+The whiteList is the list of channels approved by Pom to shoutout.
+The shoutedoutList is the list of channels that have been shouted out during the stream
+The shoutoutList is the list of channels the bot needs to shoutout.
+
+Currently, the whiteList, shoutedoutList, and shoutoutList are hosted on my desktop, which isn't ideal for uptime
+    but it is free.
+
+
+- License -
+Probably going with the MIT license. easy and permissive, though thoughts on this are welcome.
